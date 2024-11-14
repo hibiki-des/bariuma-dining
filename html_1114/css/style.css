@@ -1,0 +1,803 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+body{
+	font-family: "Zen Kaku Gothic New", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	background-image: url("../images/texture_paper.jpg");
+	background-color: rgba(255,255,255,0.80);
+	background-position: center;
+	background-blend-mode: lighten;
+}
+.overflow{
+	width: 100%;
+	max-width: 1920px;
+	overflow: hidden;
+}
+@media screen and (max-width: 1080px){
+	body{
+		font-size: clamp(0.75rem, 0.645rem + 0.53vw, 1rem);
+	}
+}
+/*==========================================TOPページ=======*/
+
+/*================
+common
+=================*/
+h1{
+	font-size: 24px;
+	font-weight: 600;
+	text-align: center;
+	padding-top: 80px;
+}
+h2{
+	text-align: center;
+}
+@media screen and (max-width: 1080px){
+	h1{
+		font-size: clamp(1.125rem, 0.967rem + 0.79vw, 1.5rem);
+		/*24(1080)から18(320)*/
+	}
+}
+
+/*================
+header
+=================*/
+.header_container01{
+	position: absolute;
+	width: 100%;
+	z-index: 5;
+	height: 65px;
+}
+.header_container02{
+	position: fixed;
+	width: 100%;
+	background-color: #ffffff;
+	border-bottom: solid 1px #E5E5E5;
+	height: 65px;
+	transition: transform 0.4s; 
+	transform: translateY(-100px); 
+	/* 初期状態で上にずらす */
+	z-index: -1;
+}
+
+.header{
+	height: 65px;
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+	position: relative;
+}
+.header_logo{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+}
+.header_logo img{
+	width: 250px;
+}
+@media screen and (max-width: 1080px){
+	.header_container01 , .header_container02{
+		height: clamp(2.813rem, 2.286rem + 2.63vw, 4.063rem);
+		/*65(1080)から45(320)*/
+	}
+	.header{
+		height: clamp(2.813rem, 2.286rem + 2.63vw, 4.063rem);
+		/*65(1080)から45(320)*/
+	}
+	.header_logo img{
+		width: clamp(8.125rem, 4.967rem + 15.79vw, 15.625rem);
+		/*250(1080)から130(320)*/
+	}
+}
+/*重なる前にロゴを透明にする*/
+@media screen and (max-width: 750px){
+	.header_container02 .header_logo{
+		opacity: 0;
+	}
+}
+/*navigation*/
+.navigation{
+	background: url("../images/nav.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	position: absolute;
+	top: 4px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.navigation ul{
+	display: flex;
+	padding: 0 20px;
+}
+.navigation ul li{
+	padding: 20px;
+	font-size: 16px;
+	font-weight: 600;
+}
+@media screen and (max-width: 1080px){
+	.navigation ul li{
+		padding: clamp(0.625rem, 0.362rem + 1.32vw, 1.25rem);
+		/*20(1080)から10(320)*/
+	}
+}
+
+
+/*================
+swiper
+=================*/
+.swiper_sec{
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+	box-shadow: 0 0 8px gray;
+}
+.gallery_sec .swiper-container{
+    width: 100%;
+    height: 338px;
+	
+}
+.gallery_sec .gal_slide{
+	padding: 0 12px;
+	text-align: center;
+    font-size: 18px;
+    background: #fff;
+    width: 359px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img{
+	width: 100%;
+}
+/*幅指定*/
+.swiper-block{
+ width: 100%;
+ max-width: 1080px;
+ margin: 0 auto;
+ overflow: hidden;
+}
+
+/*================
+説明部分
+=================*/
+.explan_sec{
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+}
+.top_explanation{
+	width: 640px;
+	margin: 50px auto;
+	font-size: 16px;
+}
+.top_explanation p:first-child{
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 8px;
+}
+@media screen and (max-width: 1080px){
+	.top_explanation{
+		width: clamp(12.5rem, 0.921rem + 57.89vw, 40rem);
+		/*640から200まで*/
+		font-size: clamp(0.75rem, 0.645rem + 0.53vw, 1rem);
+		/*16から12まで*/
+		margin-top: clamp(1.25rem, 0.461rem + 3.95vw, 3.125rem);
+		margin-bottom: clamp(1.25rem, 0.461rem + 3.95vw, 3.125rem);
+		/*50(1080)から20(320)*/
+ 	}
+	.top_explanation p:first-child{
+		font-size: clamp(1rem, 0.789rem + 1.05vw, 1.5rem);
+	}
+}
+
+
+/*================
+画像挿入部分
+=================*/
+.parallax_content{
+	width: clamp(20rem, 100vw, 120rem);
+	height: 45vh;
+	background-image: url("../images/main_img.jpg");
+	background-position: bottom;
+	background-attachment: fixed;
+	background-size: cover;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.4) inset;
+
+}
+@media screen and (max-width: 1080px){
+	.parallax_content{
+		height: 30vh;
+	}
+
+}
+
+
+
+/* 親要素の位置設定 */
+.parallax_content {
+	position: relative;
+	overflow: hidden;
+}
+/* 湯気の画像を動かすための設定 */
+.steam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/yuge.png");
+  background-repeat: repeat;
+  opacity: 0.5; /* 湯気を少し薄くする */
+  animation: moveSteam 10s linear infinite;
+  pointer-events: none; /* クリック操作を無効にする */
+  z-index: 1; /* 他の要素よりも前面に表示 */
+}
+
+/* 各湯気要素に異なるアニメーションを付与 */
+.steam1 {
+  animation: moveSteam1 12s linear infinite;
+}
+.steam2 {
+  animation: moveSteam2 15s linear infinite;
+  opacity: 0.4; /* 濃さを変えて湯気にバリエーションを */
+}
+.steam3 {
+  animation: moveSteam3 18s linear infinite;
+  opacity: 0.5;
+}
+
+/* 湯気の動き（異なる方向・スピードで変化） */
+@keyframes moveSteam1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -60px); /* 左上方向に動かす */
+  }
+}
+@keyframes moveSteam2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(60px, -40px); /* 右上方向に動かす */
+  }
+}
+@keyframes moveSteam3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-40px, 50px); /* 左下方向に動かす */
+  }
+}
+
+/*================
+メニューリンク部分
+=================*/
+.menulink_sec{
+	width: 100%;
+	max-width: 1080px;
+	margin: 40px auto 0;
+}
+.menu_links {
+  width: 100%;
+  max-width: 1080px;
+	margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%; /* 画像の間に余白を追加 */
+  justify-content: space-between; /* 並び方を調整 */
+}
+.menu_links li {
+  flex: 1 1 calc(33.33% - 1%); /* 3分割しつつ余白を考慮 */
+	margin-bottom: 1%;
+  box-sizing: border-box;
+	
+}
+.menu_links li img {
+  width: 100%; /* 親要素の幅に合わせる */
+  height: auto;
+}
+@media screen and (min-width: 1080px) {
+  .menu_links li img {
+    width: clamp(9.375rem, -1.401rem + 34.48vw, 21.875rem);
+  }
+}
+@media screen and (max-width: 1080px){
+	.menu_links{
+		margin-top: clamp(0.625rem, 0.362rem + 1.32vw, 1.25rem);
+		/*20(1080)から10(320)*/
+	}
+}
+/*440px以下*/
+@media screen and (max-width: 440px){
+	.menu_links li {
+	  flex: 1 1 calc(50% - 1%); /* 2分割しつつ余白を考慮 */
+	}
+}
+
+/*メニューリンクホバー動作*/
+.menu_link_box{
+	position: relative;
+	overflow: hidden;
+}
+.menu_link_box .caption{
+	font-size: 24px;
+	color: #000000;
+	text-align: center;
+	padding-top: 28%;
+}
+.menu_link_box .mask{
+	font-weight: 800;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	/* マスクを表示しない */
+	background-color: rgba(255,255,255,0.7);
+	-webkit-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+}
+.menu_link_box:hover .mask{
+	opacity: 1;
+}
+@media screen and (max-width: 1080px){
+	.menu_link_box .caption{
+		font-size: clamp(1rem, 0.789rem + 1.05vw, 1.5rem);
+		padding: 28% 0 0 37%;
+	}
+}
+
+/*================
+blueseal部分
+=================*/
+.blueseal_contents{
+	width: 100%;
+	max-width: 1080px;
+	margin: 100px auto 0;
+}
+.logo_blueseal{
+	padding-top: 80px;
+	text-align: center;
+	z-index: 1;
+}
+.logo_blueseal img{
+	width: 300px;
+}
+.blueseal_explanation{
+	color: #ffffff;
+	font-size: 16px;
+	width: 640px;
+	margin: 30px auto 0;
+	text-align: center;
+}
+@media screen and (max-width: 1080px){
+	.logo_blueseal img{
+		width: clamp(12.5rem, 9.868rem + 13.16vw, 18.75rem);
+		/*300(1080)から200(320)*/
+	}
+	.blueseal_explanation{
+		font-size: clamp(0.75rem, 0.645rem + 0.53vw, 1rem);
+		/*16(1080)から12(320)*/
+		width: clamp(12.5rem, 0.921rem + 57.89vw, 40rem);
+		/*640(1080)から200(320)まで*/
+		margin-top: clamp(0.938rem, 0.543rem + 1.97vw, 1.875rem);
+		/*30(1080)から15(320)まで*/
+	}
+}
+/*波を作る*/
+.blueseal_sec .container{
+  position: relative;
+  background: #005bac;
+  height: 450px;
+	margin-bottom: 50px;
+}
+.wave{
+  position: absolute;
+  height: 85px;
+  width: 100%;
+  background: #005bac;
+  top: 0;
+}
+.wave::before, .wave::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+}
+.wave::before {
+  width: 55%;
+  height: 109%;
+  background-color: #005bac;
+  right: -1.6%;
+  top: -40%;
+}
+.wave::after {
+  width: 55%;
+  height: 100%;
+  background-color: #ffffff;
+  left: -1.5%;
+  top: -60%;
+}
+@media screen and (max-width: 1080px){
+	.blueseal_sec .container{
+		height: clamp(21.875rem, 19.243rem + 13.16vw, 28.125rem);
+		/*450(1080)から350(320)*/
+		margin-bottom: clamp(1.875rem, 1.349rem + 2.63vw, 3.125rem);
+		/*50(1080)から30(320)*/
+	}
+}
+
+/*================
+access部分
+=================*/
+.info_sec{
+	width: 100%;
+	max-width: 1080px;
+	margin: 40px auto 0;
+}
+.info_flex{
+	margin: 20px auto 0;
+	align-items: center;
+	display: flex;
+}
+.info_flex img{
+	width: 600px;
+	padding-right: 50px;
+}
+.info_flex > div> p:first-child{
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+.info_flex > div> p:nth-child(n+2){
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+@media screen and (max-width: 1080px){
+	.info_flex{
+		margin: clamp(0.625rem, 0.362rem + 1.32vw, 1.25rem) clamp(1.25rem, 0.461rem + 3.95vw, 3.125rem) 0;
+		/*上20(1080)から10(320),左右50(1080)から20(320)*/
+	}
+	.info_flex img{
+		width: clamp(14.375rem, -0.172rem + 46.55vw, 31.25rem);
+		/*500(1080)から230(500)*/
+		padding-right: clamp(1.25rem, -0.366rem + 5.17vw, 3.125rem);
+		/*50(1080)から20(500)*/
+	}
+	.info_flex > div> p:first-child{
+		font-size: clamp(1.125rem, 0.967rem + 0.79vw, 1.5rem);
+		/*24(1080)から18(320)*/
+		margin-bottom: clamp(0.313rem, 0.181rem + 0.66vw, 0.625rem);
+		/*10(1080)から5(320)*/
+	}
+	.info_flex > div> p:nth-child(n+2){
+		font-size: clamp(0.75rem, 0.645rem + 0.53vw, 1rem);
+		/*16(1080)から12(320)*/
+		margin-bottom: clamp(0.125rem, 0.046rem + 0.39vw, 0.313rem);
+		/*5(1080)から2(320)*/
+	}
+}
+/*500px以下*/
+@media screen and (max-width: 500px){
+	.info_flex{
+		flex-direction: column;
+		text-align: center;
+	}
+	.info_flex img{
+		width: clamp(17.5rem, 4.167rem + 66.67vw, 25rem);
+		/*400(500)から280(320)*/
+		padding-right: 0;
+		margin-bottom: 10px;
+	}
+}
+
+
+/*googlemap*/
+.info_sec iframe{
+	margin-top: 5%;
+	width: 1080px;
+	height: 400px;
+	margin-bottom: 5%;
+}
+@media screen and (max-width: 1080px){
+	.info_sec iframe{
+		width: clamp(20rem, 100vw, 67.5rem);
+		/*1080(1080)から320(320)*/
+		height: clamp(6.25rem, -1.645rem + 39.47vw, 25rem);
+		/*400(1080)から100(320)*/
+	}
+}
+
+
+
+/*================
+footer
+=================*/
+footer{
+	background-image: url("../images/texture_wood.png");
+	background-color: rgba(255,255,255,0);
+	background-blend-mode: lighten;
+	background-position: center;
+}
+.footer{
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+}
+.footer_flex{
+	padding: 5% 8%;
+}
+.footer_flex ul{
+	display: flex;
+	justify-content: space-around;
+}
+.footer_flex img{
+	width: 200px;
+}
+.footer p{
+	color: #fff;
+	text-align: center;
+}
+@media screen and (max-width: 1080px){
+	.footer_flex img{
+		width: clamp(3.125rem, -0.822rem + 19.74vw, 12.5rem);
+		/*200(1080)から50(320)*/
+	}
+}
+
+
+
+/*==========================================MENUページ=======*/
+
+/*============
+common
+==============*/
+
+.menu_sec{
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+.menu_sec{
+	position: relative;
+}
+.menu_sec > p{
+	position: absolute;
+}
+@media screen and (max-width: 1080px){
+	.menu_sec > p{
+		width: clamp(34.375rem, 15.48rem + 46.51vw, 46.875rem);
+		/*750(1080)から550(650)*/
+	}
+	.menu_sec > p img{
+		width: clamp(34.375rem, 15.48rem + 46.51vw, 46.875rem);
+		/*750(1080)から550(650)*/
+	}
+}
+.explanation{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 700px;
+}
+.explanation p:nth-child(2){
+	width: 100%;
+	max-width: 620px;
+
+}
+.menu_sec:nth-child(odd) .explanation p:nth-child(2){
+	margin-right: 0;
+	margin-left: auto;
+}
+.menu_sec:nth-child(even) .explanation p:nth-child(2){
+	margin-right: auto;
+	margin-left: 0;
+}
+@media screen and (max-width: 1080px){
+	.explanation{
+		width: clamp(21.875rem, -11.192rem + 81.4vw, 43.75rem);
+		/*700(1080)から350(650)*/
+	}
+	.explanation img{
+		width: clamp(21.875rem, -11.192rem + 81.4vw, 43.75rem);
+		/*700(1080)から350(650)*/
+	}
+	.explanation p:nth-child(2){
+		width: clamp(21.875rem, -6.468rem + 69.77vw, 40.625rem);
+		/*650(1080)から350(650)*/
+	}
+	.menu_sec:nth-child(odd) .explanation p:nth-child(2){
+		margin-right: 10px;
+		margin-left: auto;
+	}
+	.menu_sec:nth-child(even) .explanation p:nth-child(2){
+		margin-right: auto;
+		margin-left: 10px;
+	}
+}
+.menu_gal {
+  width: 100%;
+  max-width: 1080px;
+	margin-top: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%; /* 画像の間に余白を追加 */
+  justify-content: space-between; /* 並び方を調整 */
+}
+.menu_img:first-child{
+	visibility: hidden; 
+}
+.menu_img {
+  flex: 1 1 calc(33.33% - 1%); /* 3分割しつつ余白を考慮 */
+	margin-top: 1%;
+  box-sizing: border-box;
+}
+.menu_img img {
+  width: 100%; /* 親要素の幅に合わせる */
+  height: auto;
+}
+@media screen and (min-width: 1080px) {
+  .menu_img img {
+    width: clamp(9.375rem, -1.401rem + 34.48vw, 21.875rem);
+  }
+}
+
+
+/*============
+奇数section
+==============*/
+.menu_sec:nth-child(odd) .explanation{
+	margin: 0 10px 0 auto;
+	text-align: right;
+}
+.menu_sec:nth-child(odd) > p{
+	top: -12%;
+	left: -25%;
+}
+
+/*============
+偶数section
+==============*/
+.menu_sec:nth-child(even) .explanation{
+	text-align: left;
+	margin: 0 auto 0 10px;
+}
+.menu_sec:nth-child(even) > p{
+	top: -12%;
+	right: -25%;
+}
+.menu_sec:nth-child(even) .menu_gal{
+	flex-direction: row-reverse;
+}
+
+/*円刑画像位置調整*/
+/*982px以下*/
+@media screen and (max-width: 982px){
+	.menu_sec:nth-child(odd) > p{
+		top: -9%;
+		left: -28%;
+	}
+	.menu_sec:nth-child(even) > p{
+		top: -9%;
+		right: -28%;
+	}
+}
+
+
+
+/*配置変え調整*/
+/*650px以下*/
+@media screen and (max-width: 650px){
+	.menu_sec > p{
+		width: clamp(18.75rem, 12.689rem + 30.3vw, 25rem);
+		/*400(650)から300(350)*/
+	}
+	.menu_sec > p img{
+		width: clamp(18.75rem, 12.689rem + 30.3vw, 25rem);
+		/*400(650)から300(350)*/
+	}
+	.explanation{
+		text-align: center;
+	}
+	.menu_sec{
+		margin: 40% 0;
+	}
+	.menu_img:first-child{
+		visibility: visible; 
+	}
+	.menu_sec:nth-child(odd) > p{
+		top: 50%;
+		left: 50%;
+	}
+	.menu_sec:nth-child(even) > p{
+		top: 50%;
+		right: 25%;
+	}
+	.menu_sec > p{
+		top: -40%!important;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+	.explanation{
+		text-align: center!important;
+		margin: 0 auto!important;
+	}
+	.explanation{
+		width: clamp(17.5rem, 7.197rem + 51.52vw, 28.125rem);
+		/*450(650)から280(320)*/
+	}
+	.explanation p:nth-child(2){
+		width: clamp(21.875rem, -6.468rem + 69.77vw, 40.625rem);
+		/*650(1080)から350(650)*/
+	}
+	.explanation p:nth-child(2){
+		width: clamp(17.5rem, 13.258rem + 21.21vw, 21.875rem);
+		/*350(650)から280(320)*/
+		margin-right: auto!important;
+		margin-left: auto!important;
+	}
+	.ex_label::before{
+        content: attr(data-label);
+		font-size: clamp(1.125rem, 1.004rem + 0.61vw, 1.25rem);
+		/*20(650)から18(320)*/
+		font-weight: 900;
+    }
+    .ex_label img {
+        display: none;
+    } 
+	.ex_label{
+		margin-bottom: 5%;
+	}
+	/*偶数*/
+	.menu_sec:nth-child(even) .menu_gal{
+		flex-direction: row;
+	}
+	/*ラストの下の余白を少なくする*/
+	.menu_sec:last-child{
+		margin-bottom: 0;
+	}
+}
+
+/*メニュー画像長方形はら正方形へ*/
+/*500px以下*/
+@media screen and (max-width: 500px){
+	.menu_sec > p{
+		top: -30%!important;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}
+
+/*メニュー画像３列から２列へ*/
+/*440px以下*/
+@media screen and (max-width: 440px){
+	.menu_img {
+	  flex: 1 1 calc(50% - 1%); /* 3分割しつつ余白を考慮 */
+	}
+	.menu_sec{
+		margin: 45% 0;
+	}
+	.menu_sec > p{
+		top: -20%!important;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}
